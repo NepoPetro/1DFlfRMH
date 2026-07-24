@@ -1,0 +1,34 @@
+#dependencias
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+
+#variables de entorno
+.env
+.env.local
+
+#logs
+logs/
+*.log
+
+#base de datos local
+*.db
+*.sqlite
+
+#IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+#SO
+.DS_Store
+Thumbs.db
+desktop.ini
+
+#reportes de tests
+coverage/
+allure-results/
+allure-report/
+playwright-report/
+test-results/
