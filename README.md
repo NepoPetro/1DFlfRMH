@@ -18,30 +18,21 @@ Esta plataforma é um caso de estudo de engenharia que demonstra o ciclo complet
 
 **Abordagem Estratégica:** O projeto orbita em torno do Quality Assurance (QA) e da Automação de Testes. Gastón, como QA Lead e Product Owner, lidera a estratégia de qualidade, gerencia o backlog e garante que cada entrega atenda aos critérios de aceitação. O design da plataforma prioriza a testabilidade, a rastreabilidade e a geração de métricas de qualidade desde o primeiro dia.
 
-#QU
-## Proyecto Qhawachiynin
-
-Kay plataformaqa ingeniería estudio kasqan, datos ciclo completo rikuchin: usuarios autenticaciónmanta observabilidad, analítica kama. Login sistema simple mana, escalabilidad, calidad, datos gobernanciapaq diseñado estructura.
-
-**Objetivo:** Identidad sistema tiyachiypa valiosos datos decisiones tomaq, backend desarrollo, pruebas automatización, monitoreo, analítica visualización integración.
-
-**Enfoque Estratégico:** Proyectoqa Quality Assurance (QA) y Pruebas Automatización alreadedor. Gastón, QA Lead y Product Owner, calidad estrategia lideran, backlog gestionan, cada entrega aceptación criterios cumplimentan. Plataforma diseñosqa testabilidad, trazabilidad, calidad métricas generación desde primer día priorizan.
-
 ---
 
-## Equipo
+## Equipo| Equipe
 
-| **Rol** | **Nombre** | **Responsabilidades** |
+| **Rol/Função** | **Nombre/Nome** | **Responsabilidades** |
 | :--- | :--- | :--- |
-| **Data Architect & Governant** | Victoria | Diseño de arquitectura, gobernanza de datos, backend y base de datos. |
-| **QA Lead & Product Owner** | Gastón | Estrategia de testing, automatización, calidad del producto y gestión del backlog. |
-| **DataOps Lead & Chief of Staff** | Vivianne | Pipeline de datos, monitoreo, métricas, calidad del dato y coordinación estratégica. |
+| **Data Architect & Governant** | Victoria | Diseño de arquitectura, gobernanza de datos, backend y base de datos. / Design de arquitetura, governança de dados, backend e banco de dados. |
+| **QA Lead & Product Owner** | Gastón | Estrategia de testing, automatización, calidad del producto y gestión del backlog. / Estratégia de testes, automação, qualidade do produto e gestão do backlog. |
+| **DataOps Lead & Chief of Staff** | Vivianne | Pipeline de datos, monitoreo, métricas, calidad del dato y coordinación estratégica. / Pipeline de dados, monitoramento, métricas, qualidade dos dados e coordenação estratégica. |
 
 ---
 
-## Sigue la Evolución del Proyecto en Tiempo Real
+## Sigue la Evolución del Proyecto en Tiempo Real | Acompanhe a evolução do projeto em tempo real.
 
-El proyecto está en desarrollo activo. Podés acompañar el progreso a través del **dashboard interactivo**, que se actualiza automáticamente con cada entrega y métrica clave.
+El proyecto está en desarrollo activo. Podés acompañar el progreso a través del **dashboard interactivo**, que se actualiza automáticamente con cada entrega y métrica clave. O projeto está em desenvolvimento ativo. Você pode acompanhar o progresso por meio do **painel interativo**, que é atualizado automaticamente a cada entrega e métrica-chave.
 
 **[Ver Dashboard Interactivo](https://datastudio.google.com/reporting/f54bdb35-b705-4d7a-9fc3-b0cbb7c1cbcd)**  
 
@@ -50,7 +41,7 @@ El proyecto está en desarrollo activo. Podés acompañar el progreso a través 
 
 ---
 
-## Estado Actual del Sprint
+## Estado Actual del Sprint | Estado Atual do Sprint
 
 | **Sprint** | **Objetivo** | **Estado** | **Entregas Completadas** |
 |:---|:---|:---:|:---|
