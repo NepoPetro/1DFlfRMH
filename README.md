@@ -4,7 +4,7 @@
 
 Esta plataforma es un **caso de estudio de ingeniería** que demuestra el ciclo completo del dato: desde la autenticación de usuarios hasta la observabilidad y la analítica. No es un simple sistema de login, sino una **arquitectura diseñada para la escalabilidad, la calidad y la gobernanza de datos**.
 
-** Objetivo:** Construir un sistema de identidad que genere datos valiosos para la toma de decisiones, integrando desarrollo backend, automatización de pruebas, monitoreo y visualización analítica.
+**Objetivo:** Construir un sistema de identidad que genere datos valiosos para la toma de decisiones, integrando desarrollo backend, automatización de pruebas, monitoreo y visualización analítica.
 
 ---
 
@@ -33,10 +33,10 @@ El proyecto está en desarrollo activo. Podés acompañar el progreso a través 
 
 | **Sprint** | **Objetivo** | **Estado** | **Entregas Completadas** |
 |:---|:---|:---:|:---|
-| **Sprint 1** | Infraestructura y Registro de Usuarios | ✅ 100% | 6 de 6 |
-| **Sprint 2** | Autenticación JWT y Biometría | ⏳ 0% | 0 de 6 |
-| **Sprint 3** | Automatización y Calidad | ⏳ 0% | 0 de 6 |
-| **Sprint 4** | Gobernanza y Escalabilidad | ⏳ 0% | 0 de 6 |
+| **Sprint 1** | Infraestructura y Registro de Usuarios | 100% | 6 de 6 |
+| **Sprint 2** | Autenticación JWT y Biometría | 0% | 0 de 6 |
+| **Sprint 3** | Automatización y Calidad | 0% | 0 de 6 |
+| **Sprint 4** | Gobernanza y Escalabilidad | 0% | 0 de 6 |
 
 ---
 
