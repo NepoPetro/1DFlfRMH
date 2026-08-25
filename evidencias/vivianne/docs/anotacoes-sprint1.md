@@ -69,3 +69,55 @@ INSERT INTO users (email, password_hash)
 - db
 - pgadmin
 - app
+
+# Fluxo Real Encontrado
+
+Usuário
+↓
+Frontend
+↓
+POST /auth/register
+↓
+Node.js / Express
+↓
+Validação de Email e Senha
+↓
+bcrypt.hashSync()
+↓
+INSERT INTO users
+↓
+PostgreSQL (auth_db)
+
+# Arquitetura Esperada para o Diagrama
+
+Usuário
+↓
+Frontend
+↓
+BFF
+↓
+API
+↓
+Assinatura Digital
+↓
+PostgreSQL
+├─ users
+└─ audit_logs
+      ↓
+Hash Encadeado
+
+Em caso de falha
+↓
+DLQ
+
+Monitoramento
+↓
+Prometheus
+↓
+Grafana
+
+Eventos
+↓
+DLT
+├─ Slack
+└─ Compliance
