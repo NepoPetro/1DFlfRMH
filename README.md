@@ -75,3 +75,4 @@ El proyecto está en desarrollo activo. Podés acompañar el progreso a través 
 
 > **Nota:** Este README se actualiza a medida que el proyecto avanza. El dashboard interactivo refleja el estado más reciente del desarrollo.
  
+.
