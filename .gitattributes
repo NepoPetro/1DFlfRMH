@@ -1,0 +1,67 @@
+# Lenguajes de backend y scripts
+*.js linguist-language=JavaScript
+*.ts linguist-language=TypeScript
+*.py linguist-language=Python
+*.rb linguist-language=Ruby
+*.go linguist-language=Go
+*.rs linguist-language=Rust
+*.ex linguist-language=Elixir
+*.exs linguist-language=Elixir
+*.erl linguist-language=Erlang
+*.hrl linguist-language=Erlang
+*.jl linguist-language=Julia
+
+# Lenguajes de frontend y marcado
+*.html linguist-language=HTML
+*.htm linguist-language=HTML
+*.css linguist-language=CSS
+*.scss linguist-language=SCSS
+*.sass linguist-language=Sass
+*.less linguist-language=Less
+*.vue linguist-language=Vue
+*.jsx linguist-language=JavaScript
+*.tsx linguist-language=TypeScript
+
+# Lenguajes de infraestructura y configuración
+*.sql linguist-language=SQL
+*.plpgsql linguist-language=PLpgSQL
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.toml linguist-language=TOML
+*.json linguist-language=JSON
+*.xml linguist-language=XML
+*.dockerfile linguist-language=Dockerfile
+Dockerfile linguist-language=Dockerfile
+*.conf linguist-language=ApacheConf
+*.ini linguist-language=INI
+
+# Lenguajes de documentación y otros
+*.md linguist-language=Markdown
+*.rst linguist-language=reStructuredText
+*.txt linguist-language=Text
+*.sh linguist-language=Shell
+*.bash linguist-language=Shell
+*.ps1 linguist-language=PowerShell
+*.psm1 linguist-language=PowerShell
+*.psd1 linguist-language=PowerShell
+*.ipynb linguist-language=Jupyter Notebook
+*.mustache linguist-language=Mustache
+*.clj linguist-language=Clojure
+*.cljs linguist-language=Clojure
+*.cljc linguist-language=Clojure
+
+# Lenguajes de sistemas y compilación
+*.c linguist-language=C
+*.h linguist-language=C
+*.cpp linguist-language=C++
+*.hpp linguist-language=C++
+*.cc linguist-language=C++
+*.cxx linguist-language=C++
+*.ll linguist-language=LLVM
+*.cl linguist-language=OpenCL
+
+# Lenguajes de plantillas y vistas
+*.eex linguist-language=HTML
+*.leex linguist-language=HTML
+*.heex linguist-language=HTML
+*.sface linguist-language=HTML
