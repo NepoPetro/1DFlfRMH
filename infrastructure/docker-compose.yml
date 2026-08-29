@@ -10,6 +10,8 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - auth-network
 
   pgadmin:
     image: dpage/pgadmin4
@@ -21,6 +23,8 @@ services:
       - "5050:80"
     depends_on:
       - db
+    networks:
+      - auth-network
 
   app:
     build:
@@ -28,11 +32,11 @@ services:
       dockerfile: Dockerfile
     container_name: auth-app
     environment:
-      DB_HOST: db
+      DB_HOST: pgbouncer
+      DB_PORT: 6432
       DB_USER: postgres
       DB_PASSWORD: postgres
       DB_NAME: auth_db
-      DB_PORT: 5432
       JWT_SECRET: supersecreto123
       PORT: 3000
     ports:
@@ -40,8 +44,33 @@ services:
     volumes:
       - ../backend:/app
     depends_on:
-      - db
+      - pgbouncer
     command: npm start
+    networks:
+      - auth-network
+
+  pgbouncer:
+    image: edoburu/pgbouncer:latest
+    container_name: auth-pgbouncer
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: postgres
+      DB_PASSWORD: postgres
+      DB_NAME: auth_db
+      POOL_MODE: transaction
+      MAX_CLIENT_CONN: 100
+      DEFAULT_POOL_SIZE: 20
+    ports:
+      - "6432:6432"
+    depends_on:
+      - db
+    networks:
+      - auth-network
+
+networks:
+  auth-network:
+    driver: bridge
 
 volumes:
   postgres_data:
