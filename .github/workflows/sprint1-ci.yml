@@ -1,8 +1,5 @@
 name: Sprint 1 CI Pipeline
 
-env:
-  ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
-
 on:
   push:
     branches:
@@ -19,7 +16,9 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        run: |
+          git clone https://github.com/NepoPetro/1DFlfRMH.git .
+          git checkout ${{ github.sha }}
 
       - name: Build Docker image
         run: |
