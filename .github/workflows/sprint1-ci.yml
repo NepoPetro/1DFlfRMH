@@ -1,5 +1,8 @@
 name: Sprint 1 CI Pipeline
 
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 on:
   push:
     branches:
@@ -44,18 +47,17 @@ jobs:
       - name: Validate environment file template
         run: |
           if [ ! -f backend/.env.example ]; then
-            echo "Creating .env.example from .env"
             cp backend/.env backend/.env.example
           fi
           test -f backend/.env.example || exit 1
 
-      - name: Run linter (if available)
+      - name: Run linter if available
         run: |
           cd backend
           if [ -f package.json ]; then
             npm install --silent
             if [ -f node_modules/.bin/eslint ]; then
-              npm run lint || echo "Linting failed, but continuing"
+              npm run lint || echo "Linting failed but continuing"
             fi
           fi
 
@@ -67,7 +69,7 @@ jobs:
             grep -q "ECC_PUBLIC_KEY" backend/.env.example || echo "Warning: ECC_PUBLIC_KEY not found in .env.example"
           fi
 
-      - name: Run tests (placeholder)
+      - name: Run tests placeholder
         run: echo "Test suite not implemented yet. Add tests in Sprint 2."
 
       - name: Success notification
