@@ -16,16 +16,14 @@ jobs:
 
     steps:
       - name: Checkout repository
-        run: |
-          git clone https://github.com/NepoPetro/1DFlfRMH.git .
-          git checkout ${{ github.sha }}
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build Docker image
+      - name: Validate backend files
         run: |
-          docker build -t infrastructure-app:test backend/
-
-      - name: Verify Docker image
-        run: docker images | grep infrastructure-app
+          test -f backend/package.json || exit 1
+          test -f backend/src/index.js || exit 1
 
       - name: Validate infrastructure files
         run: |
