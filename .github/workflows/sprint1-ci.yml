@@ -24,18 +24,29 @@ jobs:
           test -f infrastructure/docker-compose.yml || exit 1
           test -f infrastructure/init.sql || exit 1
 
+      - name: Validate environment variables
+        run: |
+          if [ -f backend/.env.example ]; then
+            grep -q "AES_ENCRYPTION_KEY" backend/.env.example || echo "Warning: AES_ENCRYPTION_KEY missing"
+            grep -q "ECC_PRIVATE_KEY" backend/.env.example || echo "Warning: ECC_PRIVATE_KEY missing"
+            grep -q "ECC_PUBLIC_KEY" backend/.env.example || echo "Warning: ECC_PUBLIC_KEY missing"
+          else
+            echo "backend/.env.example not found"
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          npm install --silent
+
       - name: Build Docker image
         run: docker build -t infrastructure-app:test backend/
 
       - name: Verify Docker image
         run: docker images | grep infrastructure-app
 
-      - name: Install dependencies (optional)
-        run: |
-          cd backend
-          npm install --silent || echo "npm install failed but continuing"
-
-      - name: Run linter (optional)
+      - name: Run linter
         run: |
           cd backend
           if [ -f node_modules/.bin/eslint ]; then
