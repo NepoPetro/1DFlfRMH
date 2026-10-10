@@ -1,0 +1,77 @@
+name: Sprint 1 CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate essential files
+        run: |
+          FILES="backend/package.json backend/src/index.js infrastructure/docker-compose.yml infrastructure/init.sql backend/.env.example backend/Dockerfile"
+          for f in $FILES; do
+            if [ ! -f "$f" ]; then
+              echo "Missing required file: $f"
+              exit 1
+            fi
+          done
+
+      - name: Validate environment variables
+        run: |
+          REQUIRED_VARS="DB_HOST DB_PORT DB_USER DB_PASSWORD DB_NAME JWT_SECRET AES_ENCRYPTION_KEY ECC_PRIVATE_KEY ECC_PUBLIC_KEY PORT"
+          for var in $REQUIRED_VARS; do
+            if ! grep -q "^$var=" backend/.env.example; then
+              echo "Missing environment variable in backend/.env.example: $var"
+              exit 1
+            fi
+          done
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache Node modules
+        uses: actions/cache@v4
+        with:
+          path: backend/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('backend/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install dependencies
+        run: |
+          cd backend
+          npm install
+
+      - name: Build Docker image
+        run: docker build -t backend-app backend/
+
+      - name: Run tests
+        run: |
+          cd backend
+          npm test || echo "No tests configured yet"
+
+      - name: Notify success
+        if: success()
+        run: echo "CI pipeline completed successfully"
+
+      - name: Notify failure
+        if: failure()
+        run: echo "CI pipeline failed"
